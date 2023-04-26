@@ -14,7 +14,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_26_173647) do
   create_table "comics", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "date_submitted"
     t.integer "contributor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
