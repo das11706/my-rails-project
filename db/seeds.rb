@@ -8,6 +8,7 @@
 Comic.destroy_all
 Reader.destroy_all
 Contributor.destroy_all
+Review.destroy_all
 
 Comic.create!([{ title: "Superman", description: "Man of steel leaps tall buildings in a single bound." },
 { title: "Spiderman", description: "Your friendly neighborhood spiderman." },
@@ -34,3 +35,9 @@ Contributor.create!([{ name: "Stan Lee", title: "Spider-Man", email: "Lee@marvel
   { name: "Frank Miller", title: "The Dark Knight", email: "FMiller@DC.com" },
   { name: "Geoff Johns", title: "Green Lantern", email: "johns@DC.com" },
   { name: "David Mack", title: "Daredevil", email: "mack@marvel.com" }])
+
+
+Review.create!([{ name: "Jimmy Lee", description: "The Dark Knight is a masterpiece."}, 
+  { name: "Amy Blake", description: "Green Lantern presents a great story from start to finish."}, 
+  { name: "Susan Moon", description: "Spider-man has amazing art and great story." }, 
+  { name: "Bob Cook", description: "Superman has a slow start but an amazing finish."}])
