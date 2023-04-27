@@ -20,15 +20,15 @@ Comic.create!([{ title: "Superman", description: "Man of steel leaps tall buildi
 # comic_3 = Comic.create({ title: "Green Lantern", description: "Beware my power, Green Lantern's Light!" })
 # comic_4 = Comic.create({ title: "Daredevil", description: "The man without fear." })
 
-Reader.create!([{ name: "Agus", email: "ag@owners.com" },
-{ name: "Carlos", email: "cl@twist.com" },
-{ name: "Albert", email: "al@known.com" },
-{ name: "Wayne", email: "way@sense.com" }])
+# Reader.create!([{ name: "Agus", email: "ag@owners.com" },
+# { name: "Carlos", email: "cl@twist.com" },
+# { name: "Albert", email: "al@known.com" },
+# { name: "Wayne", email: "way@sense.com" }])
 
-# reader_1 = Reader.create({ name: "Agus", email: "ag@own.com" })
-# reader_2 = Reader.create({ name: "Carlos", email: "cl@twist.com" })
-# reader_3 = Reader.create({ name: "Albert", email: "al@unknown.com" })
-# reader_4 = Reader.create({ name: "Wayne", email: "way@sen.com" })
+reader_1 = Reader.create({ name: "Agus", email: "ag@own.com", password: "123", password_confirmation: "123" })
+reader_2 = Reader.create({ name: "Carlos", email: "cl@twist.com", password: "234", password_confirmation: "234" })
+reader_3 = Reader.create({ name: "Albert", email: "al@unknown.com", password: "345", password_confirmation: "345" })
+reader_4 = Reader.create({ name: "Wayne", email: "way@sen.com", password: "456", password_confirmation: "456" })
 
 
 Contributor.create!([{ name: "Stan Lee", title: "Spider-Man", email: "Lee@marvel.com" },
