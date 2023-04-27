@@ -20,10 +20,10 @@ Comic.create!([{ title: "Superman", description: "Man of steel leaps tall buildi
 # comic_3 = Comic.create({ title: "Green Lantern", description: "Beware my power, Green Lantern's Light!" })
 # comic_4 = Comic.create({ title: "Daredevil", description: "The man without fear." })
 
-Reader.create!([{ name: "Agus", email: "ag@own.com" },
+Reader.create!([{ name: "Agus", email: "ag@owners.com" },
 { name: "Carlos", email: "cl@twist.com" },
-{ name: "Albert", email: "al@unknown.com" },
-{ name: "Wayne", email: "way@sen.com" }])
+{ name: "Albert", email: "al@known.com" },
+{ name: "Wayne", email: "way@sense.com" }])
 
 # reader_1 = Reader.create({ name: "Agus", email: "ag@own.com" })
 # reader_2 = Reader.create({ name: "Carlos", email: "cl@twist.com" })
