@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :comics, :readers, :reviews, :contributors
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get 'signup' => 'readers#new'
 end
