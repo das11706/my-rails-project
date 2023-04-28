@@ -1,0 +1,8 @@
+<% if @reader.error.any? %>
+  The form contains <%= pluralize(@reader.errors.count, "error") %>.
+  <ul>
+  <% @reader.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
