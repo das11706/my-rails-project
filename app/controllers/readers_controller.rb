@@ -2,7 +2,7 @@ class ReadersController < ApplicationController
 
   def show
     @reader = Reader.find(params[:id])
-    debugger
+    # debugger
   end
 
   def new
