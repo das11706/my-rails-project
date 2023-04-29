@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get 'signup' => 'readers#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 end
