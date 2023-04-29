@@ -25,10 +25,10 @@ Comic.create!([{ title: "Superman", description: "Man of steel leaps tall buildi
 # { name: "Albert", email: "al@known.com" },
 # { name: "Wayne", email: "way@sense.com" }])
 
-reader_1 = Reader.create({ name: "Agus", email: "ag@own.com", password: "123", password_confirmation: "123" })
-reader_2 = Reader.create({ name: "Carlos", email: "cl@twist.com", password: "234", password_confirmation: "234" })
-reader_3 = Reader.create({ name: "Albert", email: "al@unknown.com", password: "345", password_confirmation: "345" })
-reader_4 = Reader.create({ name: "Wayne", email: "way@sen.com", password: "456", password_confirmation: "456" })
+reader_1 = Reader.create({ name: "Agus", email: "ag@own.com", password: "1234", password_confirmation: "123" })
+reader_2 = Reader.create({ name: "Carlos", email: "cl@twist.com", password: "2345", password_confirmation: "234" })
+reader_3 = Reader.create({ name: "Albert", email: "al@unknown.com", password: "3456", password_confirmation: "345" })
+reader_4 = Reader.create({ name: "Wayne", email: "way@sen.com", password: "4567", password_confirmation: "456" })
 
 
 Contributor.create!([{ name: "Stan Lee", title: "Spider-Man", email: "Lee@marvel.com" },
