@@ -12,6 +12,7 @@ class ReadersController < ApplicationController
   def create
     @reader = Reader.new(reader_params)
     if @reader.save
+      log_in @reader
       flash[:success] = "Welcome to the Comics Reader App!"
       redirect_to @reader
     else
