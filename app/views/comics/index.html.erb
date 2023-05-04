@@ -1,0 +1,10 @@
+<h1>Comics</h1>
+
+<ul>
+  <% @comics.each do |comic| %>
+
+    <li><%= link_to comic.name, comic_path(comic) %></li><br>
+  
+  <% end %>
+</ul>
+
