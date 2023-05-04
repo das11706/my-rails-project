@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'signup' => 'readers#new'
   get 'login' => 'sessions#new'
+  get '/auth/github/callback' => 'sessions#create'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 end
