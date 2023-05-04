@@ -1,8 +1,10 @@
 <h2>Comic Details </h2>
 
 <p>
-  <h3> Name: </h3>
-  <h2><%= @comic.name %></h2>
-  <h3> Description: </h3>
-  <h2><%= @comic.description %></h2>
+  <h4> Title: </h4>
+  <h3><%= @comic.title  %></h3>
+  <h4> Description: </h4>
+  <h3><%= @comic.description %></h3>
 </p>
+<br>
+<p><%= link_to "Comics Homepage", comics_path %></p><br>

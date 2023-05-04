@@ -3,7 +3,7 @@
 <ul>
   <% @comics.each do |comic| %>
 
-    <li><%= link_to comic.name, comic_path(comic) %></li><br>
+    <li><%= link_to comic.title, comic_path(comic) %></li><br>
   
   <% end %>
 </ul>
