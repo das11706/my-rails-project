@@ -1,0 +1,10 @@
+<br>
+<p>Name: <%= @contributor.name %></p>
+<p>Title: <%= @contributor.title %></p>
+<p>Email: <%= @contributor.email %></p>
+
+<p><%= link_to 'Comics', comics_path %><p>
+
+
+
+<p><%= button_to 'Log Out', logout_path, method: "delete" %></p>
