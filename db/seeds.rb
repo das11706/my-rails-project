@@ -44,8 +44,8 @@ p "Created #{Comic.count} comics"
 
 reader_1 = Reader.create({ name: "Agus", email: "ag@own.com", password: "1234", password_confirmation: "1234" })
 reader_2 = Reader.create({ name: "Carlos", email: "cl@twist.com", password: "2345", password_confirmation: "2345" })
-reader_3 = Reader.create({ name: "Vicky", email: "al@unknown.com", password: "3456", password_confirmation: "3456" })
-reader_4 = Reader.create({ name: "Susie", email: "way@sen.com", password: "4567", password_confirmation: "4567" })
+reader_3 = Reader.create({ name: "Vicky", email: "viky@unknown.com", password: "3456", password_confirmation: "3456" })
+reader_4 = Reader.create({ name: "Susie", email: "sus@sen.com", password: "4567", password_confirmation: "4567" })
 
 
 # Review.create!([{ name: "Jimmy Lee", description: "The Dark Knight is a masterpiece."}, 
