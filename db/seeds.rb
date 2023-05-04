@@ -15,10 +15,15 @@ Review.destroy_all
 #   { name: "Geoff Johns", title: "Green Lantern", email: "johns@DC.com" },
 #   { name: "David Mack", title: "Daredevil", email: "mack@marvel.com" }])
 
-contributor_1 = Contributor.create({ name: "Stan Lee", title: "Spider-Man", email: "Lee@marvel.com" })
-contributor_2 = Contributor.create({ name: "Frank Miller", title: "The Dark Knight", email: "FMiller@DC.com" })
-contributor_3 = Contributor.create({ name: "Geoff Johns", title: "Green Lantern", email: "johns@DC.com" })
-contributor_4 = Contributor.create({ name: "David Mack", title: "Daredevil", email: "mack@marvel.com" })
+# contributor_1 = Contributor.create({ name: "Stan Lee", title: "Spider-Man", email: "Lee@marvel.com", password: "1234", password_confirmation: "1234" })
+# contributor_2 = Contributor.create({ name: "Frank Miller", title: "The Dark Knight", email: "FMiller@DC.com", password: "2345", password_confirmation: "2345" })
+# contributor_3 = Contributor.create({ name: "Geoff Johns", title: "Green Lantern", email: "johns@DC.com", password: "3456", password_confirmation: "3456" })
+# contributor_4 = Contributor.create({ name: "David Mack", title: "Daredevil", email: "mack@marvel.com", password: "4567", password_confirmation: "4567" })
+
+contributor_1 = Contributor.create({ name: "Stan Lee", title: "Spider-Man" })
+contributor_2 = Contributor.create({ name: "Frank Miller", title: "The Dark Knight" })
+contributor_3 = Contributor.create({ name: "Geoff Johns", title: "Green Lantern" })
+contributor_4 = Contributor.create({ name: "David Mack", title: "Daredevil" })
 
 comic_1 = contributor_1.comics.create({ title: "Spiderman", description: "Your friendly neighborhood spiderman." })
 comic_2 = contributor_2.comics.create({ title: "The Dark Knight", description: "The caped protector of Gotham." })
