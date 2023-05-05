@@ -2,4 +2,11 @@
 
 <h3><%= link_to "Sign up now!", signup_path %></h3>
 
-<%= link_to('Log in with GitHub!', '/auth/github', method: :post) %>
+<% if session[:reader_id] %>
+  <h1><%= @reader.name %></h1>
+  <h2>Email: <%= @reader.email %></h2>
+  <h2>GitHub UID: <%= @reader.uid %></h2>
+  <img src="<%= @reader.image %>">
+<% else %>
+  <%= link_to('Log in with GitHub!', '/auth/github', method: :post) %>
+<% end %>
