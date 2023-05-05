@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   
-  def new
-  end
+  # def new
+  # end
 
   # def create
   #   reader = Reader.find_by(email: params[:session][:email].downcase)
@@ -28,7 +28,9 @@ class SessionsController < ApplicationController
 
     session[:reader_id] = @reader.id 
 
-    render 'static/home'
+    # render 'static/home'
+    render 'readers/new'
+    
   end
 
   private

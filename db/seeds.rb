@@ -47,6 +47,11 @@ reader_2 = Reader.create!({ name: "Carlos", email: "cl@twist.com", password: "23
 reader_3 = Reader.create!({ name: "Vicky", email: "viky@unknown.com", password: "3456", password_confirmation: "3456" })
 reader_4 = Reader.create!({ name: "Susie", email: "sus@sen.com", password: "4567", password_confirmation: "4567" })
 
+# reader_1 = Reader.create!({ name: "Agus", email: "ag@own.com" })
+# reader_2 = Reader.create!({ name: "Carlos", email: "cl@twist.com" })
+# reader_3 = Reader.create!({ name: "Vicky", email: "viky@unknown.com" })
+# reader_4 = Reader.create!({ name: "Susie", email: "sus@sen.com" })
+
 review_1 = reader_1.reviews.create!({ name: "Agus", description: "The Dark Knight is a masterpiece.", comic_id: comic_2.id })
 review_2 = reader_2.reviews.create!({ name: "Carlos", description: "Green Lantern presents a great story from start to finish.", comic_id: comic_3.id }) 
 review_3 = reader_3.reviews.create!({ name: "Vicky", description: "Spider-man has amazing art and great story.", comic_id: comic_1.id })

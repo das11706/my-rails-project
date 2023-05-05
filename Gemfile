@@ -81,8 +81,8 @@ group :test do
   
 end
 
-gem "omniauth", "~> 2.1"
-gem "omniauth-github", "~> 2.0"
-gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "omniauth"
+gem "omniauth-github"
+gem "omniauth-rails_csrf_protection"
 
-gem "dotenv-rails", "~> 2.8"
+gem "dotenv-rails"
