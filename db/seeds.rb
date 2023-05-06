@@ -54,10 +54,11 @@ reader_4 = Reader.create!({ name: "Susie", email: "sus@sen.com", password: "4567
 
 review_1 = reader_1.reviews.create!({ name: "Agus", description: "The Dark Knight is a masterpiece.", comic_id: comic_2.id })
 review_2 = reader_2.reviews.create!({ name: "Carlos", description: "Green Lantern presents a great story from start to finish.", comic_id: comic_3.id }) 
-review_3 = reader_3.reviews.create!({ name: "Vicky", description: "Spider-man has amazing art and great story.", comic_id: comic_1.id })
-review_4 = reader_4.reviews.create!({ name: "Susie", description: "The man without fear.", comic_id: comic_4.id })
+review_3 = reader_3.reviews.create!({ name: "Vicky", description: "Spider-man has amazing art and a great story.", comic_id: comic_1.id })
+review_4 = reader_4.reviews.create!({ name: "Susie", description: "Could have used more umph!!!", comic_id: comic_4.id })
+review_5 = reader_4.reviews.create!({ name: "Susie", description: "Dazzling and beyond expectations!", comic_id: comic_1.id })
 
-# review_1 = comic_1.reviews.create!({ name: "Agus", description: "The Dark Knight is a masterpiece."})
+# review_1 = comic_2.reviews.create!({ name: "Agus", description: "The Dark Knight is a masterpiece.", reader_id: reader_1.id })
 
 
 # Reader.create!([{ name: "Agus", email: "ag@owners.com", password: "1234" },

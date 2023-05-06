@@ -7,4 +7,18 @@
   <h3><%= @comic.description %></h3>
 </p>
 <br>
-<p><%= link_to "Comics Homepage", comics_path %></p><br>
+
+
+<p>
+  
+<h2>Reviews</h2>
+
+  <% @comic.reviews.each do |r| %>
+  <h4>Name:</h4>
+  <h3><%= r.name %></h3>
+  <h4>Description:</h4>
+  <h3><%= r.description %></h3><br>
+  <% end %>
+</p>
+<br><br>
+<%= link_to 'Comics Homepage', comics_path %>
