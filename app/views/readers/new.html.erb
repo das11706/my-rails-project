@@ -9,12 +9,6 @@
   <%= f.label :email %>
   <%= f.email_field :email %><br><br>
   
-  <%= f.label :title, 'Comics' %>
-  <%= f.collection_check_boxes(:comic_ids, Comic.all, :id, :title) do |b| %>
-  <p><%= b.label(:"data-value" => b.value) { b.check_box + b.text } %></p>
-  <% end %>
-  </p>
-
   <%= f.label :password %>
   <%= f.password_field :password %><br><br>
 

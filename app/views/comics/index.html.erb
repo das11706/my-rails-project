@@ -1,4 +1,4 @@
-<h1>Comics</h1>
+<h1>Comics Homepage</h1>
 
 <ul>
   <% @comics.each do |comic| %>
@@ -7,4 +7,6 @@
   
   <% end %>
 </ul>
+
+<%= link_to "Write a comic review", new_review_path  %><br><br>
 

@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get 'sessions/create' 
-  get 'signup' => 'readers#new'
-  
+  get 'readers/signup' => 'readers#new'
+  get 'contributors/signup' => 'contributors#new'
   get 'login' => 'sessions#new'
   get '/auth/github/callback' => 'sessions#create'
   # get '/auth/github' => 'sessions#create'

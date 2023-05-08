@@ -1,4 +1,4 @@
-<h2>Create new review for Comic</h2>
+<h2>Write a comic review</h2>
 
 <% if @review.errors.any? %>
   <div id="error_explanation">
@@ -26,7 +26,8 @@
 
   <p>
   <%= f.label :title, 'Comics' %><br>
-  <%= f.collection_check_boxes(:comic_id, Comic.all, :id, :title ) do |b| %>
+  <%= f.collection_check_boxes(:id, Comic.all, :id, :title ) do |b| %>
+ 
   <p><%= b.label(:"data-value" => b.value) { b.check_box + b.text } %></p>
 
   <% end %>
@@ -42,3 +43,5 @@
   
 <% end %>
 
+
+<p><%= link_to 'Comics Homepage', comics_path %><p>
