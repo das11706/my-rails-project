@@ -22,6 +22,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_05_024512) do
   create_table "contributors", force: :cascade do |t|
     t.string "name"
     t.string "title"
+    t.string "email"
+    t.string "password"
+    t.string "password_confirmation"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

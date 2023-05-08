@@ -1,0 +1,16 @@
+<h2><%= " #{@review.name} Reviews" %></h2>
+
+<p>
+  
+  <h4>Title:</h4>
+  <h3><%= @review.comic.title %></h3>
+
+  <h4>Description:</h4>
+  <h3><%= @review.description %> </h3>
+  
+</p>
+
+<%= link_to 'Back', reviews_path %>
+
+
+  

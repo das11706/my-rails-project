@@ -23,6 +23,6 @@ class ReadersController < ApplicationController
   private
 
     def reader_params
-      params.require(:reader).permit(:name, :email, :password, :password_confirmation)
+      params.require(:reader).permit(:name, :email, :password, :password_confirmation, comic_ids:[], comics_attributes: [:title, :description])
     end
 end

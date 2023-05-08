@@ -1,4 +1,4 @@
-<h1> Welcome to the Comics Reader App!</h1>
+<h1> Welcome to the Comics App!</h1>
 
 
 <% if session[:reader_id] %>
@@ -9,3 +9,6 @@
 <% else %>
   <%= link_to('Log in with GitHub!', '/auth/github', method: :post) %>
 <% end %>
+
+
+<h3><%= link_to "Sign up now!", signup_path %></h3>
