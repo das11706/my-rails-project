@@ -23,25 +23,13 @@
   <%= f.text_field :name %>
   </p>
 
-
-  <p>
-  <%= f.label :title, 'Comics' %><br>
-  <%= f.collection_check_boxes(:id, Comic.all, :id, :title ) do |b| %>
  
-  <p><%= b.label(:"data-value" => b.value) { b.check_box + b.text } %></p>
-
-  <% end %>
-  </p>
-
   <p>
   <%= f.label :description %>:<br>
   <%= f.text_area :description %>
   </p>
 
-
   <%= f.submit 'Create Review' %>
-  
 <% end %>
-
 
 <p><%= link_to 'Comics Homepage', comics_path %><p>

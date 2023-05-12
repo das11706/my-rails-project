@@ -1,0 +1,12 @@
+<h1>Readers</h1>
+
+<ul>
+  <% @readers.each do |reader| %>
+
+    <li><%= link_to reader.name, reader_path(reader) %></li><br>
+  
+  <% end %>
+</ul>
+
+<%= link_to "Write a comic review", new_review_path  %><br><br>
+

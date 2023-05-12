@@ -8,17 +8,13 @@
 </p>
 <br>
 
-
 <p>
   
-<h2>Reviews</h2>
 
-  <% @comic.reviews.each do |r| %>
-  <h4>Name:</h4>
-  <h3><%= r.name %></h3>
-  <h4>Description:</h4>
-  <h3><%= r.description %></h3><br>
-  <% end %>
+<h3><%= link_to "Write a comic review", new_review_path  %><br><br></h3>
+  
+
+ 
 </p>
-<br><br>
+
 <%= link_to 'Comics Homepage', comics_path %>

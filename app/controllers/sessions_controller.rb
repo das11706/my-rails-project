@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def create
+  def create_git
     @reader = Reader.find_or_create_by(uid: auth['uid']) do |u|
       u.name = auth['info']['name']
       u.email = auth['info']['email']
@@ -29,7 +29,8 @@ class SessionsController < ApplicationController
     session[:reader_id] = @reader.id 
 
     # render 'static/home'
-    render 'readers/new'
+    redirect_to comics_path
+    # render 'readers/new'
     
   end
 

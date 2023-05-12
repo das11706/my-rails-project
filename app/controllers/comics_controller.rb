@@ -4,8 +4,14 @@ class ComicsController < ApplicationController
     @comics = Comic.all 
   end
 
+  def show
+    @comic = Comic.find(params[:id])
+  end
+
   def new
     @comic = Comic.new 
+    @comic.reviews.build(name: '')
+    @comic.reviews.build(description: '')
   end
 
   def create
@@ -17,13 +23,10 @@ class ComicsController < ApplicationController
     end
   end
 
-  def show
-    @comic = Comic.find(params[:id])
-  end
 
   private
     def comic_params
-      params.require(:comic).permit(:title, :description)
+      params.require(:comic).permit(:title, :description, reviews_attributes: [:name, :description])
     end
     
 end

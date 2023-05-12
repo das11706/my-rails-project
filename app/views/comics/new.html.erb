@@ -1,8 +1,6 @@
 <h2>Comics</h2>
 
 <%= form_for @comic do |f| %>
-  
-
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -12,6 +10,15 @@
     <%= f.label :description %>
     <%= f.text_field :description %>
   </p>
+
+  <h2>Reviews</h2>
+  <%= f.fields_for :reviews, @comic.reviews.build  do |reviews_fields| %>
+    <%= reviews_fields.label :name %><br>
+    <%= reviews_fields.text_field :name %><br>
+
+    <%= reviews_fields.label :description %><br>
+    <%= reviews_fields.text_field :description %><br>
+  <% end %><br>
     
   <%= f.submit %>
     
