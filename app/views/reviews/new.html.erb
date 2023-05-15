@@ -1,22 +1,18 @@
 <h2>Write a comic review</h2>
 
-<% if @review.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@review.errors.count, "error") %>
-      prohibited this review from being saved:
-    </h2>
-
-    <ul>
-    <% @review.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <%= form_for @review do |f| %>
   <%= render 'shared/error_messages', object: f.object %><br>
+
+  <p>
+  <%= f.label :comic_title %>
+  <%= f.text_field :comic_title %>
+  </p>
+
+
+  <p>
+  <%= f.label :reader_name %>
+  <%= f.text_field :reader_name %>
+  </p>
 
   <p>
   <%= f.label :name %>

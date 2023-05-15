@@ -1,10 +1,12 @@
 class Reader < ApplicationRecord
   has_many :reviews
   has_many :comics, through: :reviews
+  # @reader.comics
+
   validates :name, presence: true, uniqueness: true
   # validates :name, presence: true
   validates :email, presence: true
-  validates :password, presence: true, length: { minimum: 4 }
+  # validates :password, presence: true, length: { minimum: 4 }
   has_secure_password
   accepts_nested_attributes_for :reviews
 

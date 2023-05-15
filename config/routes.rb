@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   resources :comics, only: [:show] do
-    resources :reviews, only: [:show, :index, :create]
+    resources :reviews, only: [:show, :index, :new, :create]
   end
 
   resources :readers, only: [:show] do

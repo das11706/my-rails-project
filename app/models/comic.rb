@@ -1,7 +1,12 @@
 class Comic < ApplicationRecord
   belongs_to :contributor
   has_many :reviews
+  # reviews.comic_id
+  # @comic.reviews
+  
   has_many :readers, through: :reviews
+  # @comic.readers
+  
   validates :title, presence: true
   validates :description, presence: true
   # accepts_nested_attributes_for :reviews

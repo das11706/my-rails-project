@@ -12,15 +12,25 @@ class ReviewsController < ApplicationController
     
   def new
     @review = Review.new  
+    # @comic.reviews.build(name: '')
+    # @comic.reviews.build(description: '')
   end
 
   def create 
     @review = Review.new(review_params)
+    # if params[:comic_id]
+    #   @review = Review.find_or_create_by(review_params)
+    #   @review.save
+      
+    # end
+    # @comic.reviews.build(review_params)
     # byebug
     if @review.save
       # byebug
-      redirect_to review_path(@review)
+      # redirect_to review_path(@review)
+      redirect_to @review
     else
+      byebug
       render :new
     end
   end
@@ -44,7 +54,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:name, :description, :comic_id, :reader_id, comic_ids: [])
+    params.require(:review).permit(:name, :description, :comic_title, :reader_name, :comic_id,  comic_ids: [])
   end
 end
 
