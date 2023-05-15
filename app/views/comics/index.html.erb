@@ -11,7 +11,9 @@
  
 <%= link_to 'Reviews', reviews_path %><br><br>
 
-<p><%= link_to 'Back', readers_path %></p>
+<%= link_to 'Create new comic', new_comic_path %><br><br>
+
+<p><%= link_to 'Back', reader_path(current_user) %></p>
 
 <p><%= button_to 'Log Out', logout_path, method: "delete" %></p>
 

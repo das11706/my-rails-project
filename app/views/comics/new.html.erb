@@ -12,7 +12,8 @@
   </p>
 
   <h2>Reviews</h2>
-  <%= f.fields_for :reviews, @comic.reviews.build  do |reviews_fields| %>
+  
+  <%= f.fields_for :reviews  do |reviews_fields| %>
     <%= reviews_fields.label :name %><br>
     <%= reviews_fields.text_field :name %><br>
 

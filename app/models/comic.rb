@@ -6,7 +6,7 @@ class Comic < ApplicationRecord
   
   has_many :readers, through: :reviews
   # @comic.readers
-  
+
   validates :title, presence: true
   validates :description, presence: true
   # accepts_nested_attributes_for :reviews

@@ -9,6 +9,10 @@ class ReviewsController < ApplicationController
       @reviews = Review.all 
     end
   end
+
+  def show
+    @review = Review.find_by(id: params[:id])
+  end
     
   def new
     @review = Review.new  
@@ -21,7 +25,6 @@ class ReviewsController < ApplicationController
     # if params[:comic_id]
     #   @review = Review.find_or_create_by(review_params)
     #   @review.save
-      
     # end
     # @comic.reviews.build(review_params)
     # byebug
@@ -30,15 +33,27 @@ class ReviewsController < ApplicationController
       # redirect_to review_path(@review)
       redirect_to @review
     else
-      byebug
-      render :new
+      # byebug
+      # render :new
+      render 'new'
     end
   end
 
-  
-  def show
-    @review = Review.find(params[:id])
+  def edit
+    @review = Review.find_by(id: params[:id])
   end
+
+  def update
+    @review = Review.find_by(id: params[:id])
+    @review.update(review_params)
+
+    if @review.save
+      redirect_to @review
+    else
+      render :edit
+    end
+  end
+ 
 
   # def create
   #   @contributor = Contributor.new(contributor_params)
