@@ -24,5 +24,4 @@ class Comic < ApplicationRecord
     end
   end
 
-
 end

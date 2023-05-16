@@ -31,4 +31,8 @@ class Review < ApplicationRecord
   def reader_name
      self.reader ? self.reader.name : nil
   end
+
+  def self.alphabetically
+    all.order(name: :asc)
+  end
 end

@@ -5,8 +5,12 @@ class ReviewsController < ApplicationController
       @reviews = Comic.find(params[:comic_id]).reviews
     # elsif params[:reader_id]
     #   @reviews = Reader.find(params[:reader_id]).reviews
+    # elsif Review.first_three
+    #   @reviews = Review.first_three
     else
-      @reviews = Review.all 
+      @reviews = Review.alphabetically.all 
+      # @reviews = Review.limit(3).to_a 
+      # @reviews = Review.first_three
     end
   end
 
