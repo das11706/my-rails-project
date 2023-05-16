@@ -24,4 +24,8 @@ class Comic < ApplicationRecord
     end
   end
 
+  def self.alphabetically
+    all.order(title: :desc)
+  end
+
 end

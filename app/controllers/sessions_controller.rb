@@ -31,6 +31,7 @@ class SessionsController < ApplicationController
 
     # render 'static/home'
     redirect_to comics_path
+    # redirect_to reader
     # render 'readers/new'
     
   end

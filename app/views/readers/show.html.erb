@@ -2,8 +2,8 @@
 <p>Name: <%= @reader.name %></p>
 <p>Email: <%= @reader.email %></p>
 
-<p><%= link_to 'Comics', comics_path %><p>
+<p><%= link_to 'Comics Homepage', comics_path %><p>
 
-
+<p><%= link_to 'Update profile', edit_reader_path(current_user) %><p>
 
 <p><%= button_to 'Log Out', logout_path, method: "delete" %></p>

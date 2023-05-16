@@ -27,6 +27,10 @@ class ReadersController < ApplicationController
     end
   end
 
+  def edit
+    @reader = Reader.find(params[:id])
+  end
+
   private
 
     def reader_params
