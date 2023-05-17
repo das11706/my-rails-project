@@ -31,6 +31,18 @@ class ReadersController < ApplicationController
     @reader = Reader.find(params[:id])
   end
 
+  def update
+    @reader = Reader.find_by(id: params[:id])
+    @reader.update(reader_params)
+
+    if @reader.save
+      flash[:success] = "Reader updated"
+      redirect_to @reader
+    else
+      render :edit
+    end
+  end
+
   private
 
     def reader_params
