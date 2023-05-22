@@ -10,9 +10,9 @@
   
 </p>
 
-<p><%= link_to 'Update review', edit_review_path(current_user) %><p
+<p><%= link_to 'Edit review', edit_reader_review_path(@review.reader, @review) if @review.reader %></p>
 
-<%= link_to 'Back', reviews_path %>
+<p><%= link_to 'Back', reviews_path %></p>
 
 
   

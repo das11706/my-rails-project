@@ -1,31 +1,38 @@
 class ReviewsController < ApplicationController
+  before_action :logged_in_reader, only: [:show, :edit, :update, :destroy]
+ 
 
   def index
     if params[:comic_id]
       @reviews = Comic.find(params[:comic_id]).reviews
     # elsif params[:reader_id]
     #   @reviews = Reader.find(params[:reader_id]).reviews
-    # elsif Review.first_three
-    #   @reviews = Review.first_three
     else
       @reviews = Review.alphabetically.all 
-      # @reviews = Review.limit(3).to_a 
-      # @reviews = Review.first_three
     end
   end
 
-  def show
-    @review = Review.find_by(id: params[:id])
-  end
-    
   def new
-    @review = Review.new  
+    if params[:reader_id] && !Reader.exists?(params[:reader_id])
+      redirect_to reader_path, alert: "Reader not found."
+    else
+      @review = Review.new(reader_id: params[:reader_id])  
+    end
+    # @review = @reader.reviews.build 
     # @comic.reviews.build(name: '')
     # @comic.reviews.build(description: '')
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+    
   def create 
-    @review = Review.new(review_params)
+    # @review = Review.new(review_params)
+    # @review.reader = current_user
+    @review = current_user.reviews.build(review_params) 
+    # @review = current_user.reviews.build(review_params) -- this is also a way to instantiate a new review object that would be associated to the current user. it would replace lines 30 and 31.
+
     # if params[:comic_id]
     #   @review = Review.find_or_create_by(review_params)
     #   @review.save
@@ -44,16 +51,31 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find_by(id: params[:id])
+    if params[:reader_id]
+     reader = Reader.find_by(id: params[:reader_id])
+     if reader.nil?
+      redirect_to readers_path, alert: "Reader not found."
+     else
+      @review = reader.reviews.find_by(id: params[:id])
+      redirect_to reader_reviews_path(reader), alert: "Review not found." if @review.nil?
+     end
+    else
+      @review = Review.find(params[:id])
+    end
+    # byebug
   end
 
   def update
-    @review = Review.find_by(id: params[:id])
+    # @review = Review.find_by(id: params[:id])
+    @review = Review.find(params[:id])
+
     @review.update(review_params)
 
     if @review.save
-      redirect_to @review
+      # redirect_to @review
+      redirect_to review_path(@review)
     else
+      # byebug
       render :edit
     end
   end
@@ -73,8 +95,16 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:name, :description, :comic_title, :reader_name, :comic_id,  comic_ids: [])
+    params.require(:review).permit(:name, :description, :reader_id, :comic_title, :reader_name, :comic_id,  comic_ids: [])
   end
+
+  def logged_in_reader
+    unless logged_in?
+      flash[:danger] = "Please log in."
+      redirect_to login_path
+    end
+  end
+
 end
 
 

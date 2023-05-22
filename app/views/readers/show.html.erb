@@ -4,6 +4,13 @@
 
 <p><%= link_to 'Comics Homepage', comics_path %><p>
 
-<p><%= link_to 'Update profile', edit_reader_path(current_user) %><p>
+<p><%= link_to 'New Review', new_reader_review_path(@reader) %>
+
+<p><%= link_to 'Update reader profile', edit_reader_path(current_user) %><p>
 
 <p><%= button_to 'Log Out', logout_path, method: "delete" %></p>
+
+<p>Reviews:</p>
+<% @reader.reviews.each do |review| %>
+  <div><%= link_to review.comic.title, review_path(review)  %></div>
+<% end %>

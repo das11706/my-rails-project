@@ -1,4 +1,6 @@
 class ReadersController < ApplicationController
+  before_action :logged_in_reader, only: [:edit, :update]
+ 
 
   def index
     @readers = Reader.all
@@ -6,8 +8,10 @@ class ReadersController < ApplicationController
 
   def new
     @reader = Reader.new
-    @reader.reviews.build(name: '')
-    @reader.reviews.build(description: '')
+    # @review = Review.new  
+
+    # @reader.reviews.build(name: '')
+    # @reader.reviews.build(description: '')
   end
 
   def show
@@ -47,5 +51,12 @@ class ReadersController < ApplicationController
 
     def reader_params
       params.require(:reader).permit(:name, :email, :password, :password_confirmation, comic_ids:[], comics_attributes: [:title, :description], reviews_attributes: [:name, :description])
+    end
+
+    def logged_in_reader
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_path
+      end
     end
 end

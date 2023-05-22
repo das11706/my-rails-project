@@ -6,8 +6,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :index, :new, :create]
   end
 
-  resources :readers, only: [:show] do
-    resources :reviews, only: [:show, :index]
+  resources :readers, only: [:show, :index] do
+    resources :reviews, only: [:show, :index, :new, :edit, :update]
   end
   
   resources :comics, :readers, :reviews, :contributors
