@@ -12,7 +12,7 @@
 
 <p><%= link_to 'Edit review', edit_reader_review_path(@review.reader, @review) if @review.reader %></p>
 
-<p><%= link_to 'Back', reviews_path %></p>
+<p><%= link_to 'Back', reader_path(current_user) %></p>
 
 
   

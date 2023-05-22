@@ -1,14 +1,20 @@
+
 <%= form_for @review do |f| %>
   <%= render 'shared/error_messages', object: f.object %><br>
-  
-  <%= reader_id_field(@review) %>
+
+  <%= f.hidden_field :reader_id %>
   <br>
 
   <p>
   <%= f.label :comic_title %>
-  <%= f.text_field :comic_title %>
+  <%= f.collection_select :comic_title, Comic.all, :title, :title, prompt: true %>
   </p>
- 
+
+    <p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </p>
+
   <p>
   <%= f.label :description %>:<br>
   <%= f.text_area :description %>

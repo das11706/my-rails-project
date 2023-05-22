@@ -3,8 +3,8 @@ class ReviewsController < ApplicationController
  
 
   def index
-    if params[:comic_id]
-      @reviews = Comic.find(params[:comic_id]).reviews
+    if params[:reader_id]
+      @reviews = Reader.find(params[:reader_id]).reviews
     # elsif params[:reader_id]
     #   @reviews = Reader.find(params[:reader_id]).reviews
     else
@@ -14,10 +14,17 @@ class ReviewsController < ApplicationController
 
   def new
     if params[:reader_id] && !Reader.exists?(params[:reader_id])
-      redirect_to reader_path, alert: "Reader not found."
+      redirect_to readers_path, alert: "Reader not found."
     else
       @review = Review.new(reader_id: params[:reader_id])  
     end
+
+    # if params[:comic_id] && !Comic.exists?(params[:comic_id])
+    #   redirect_to comic_path, alert: "Comic not found."
+    # else
+    #   @review = Review.new(comic_id: params[:comic_id])  
+    # end
+
     # @review = @reader.reviews.build 
     # @comic.reviews.build(name: '')
     # @comic.reviews.build(description: '')
@@ -44,7 +51,7 @@ class ReviewsController < ApplicationController
       # redirect_to review_path(@review)
       redirect_to @review
     else
-      # byebug
+      byebug
       # render :new
       render 'new'
     end
@@ -95,7 +102,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:name, :description, :reader_id, :comic_title, :reader_name, :comic_id,  comic_ids: [])
+    params.require(:review).permit(:name, :description, :reader_id, :comic_id, :comic_title, :title, :reader_name,  comic_ids: [])
   end
 
   def logged_in_reader
