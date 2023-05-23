@@ -53,6 +53,7 @@ reader_2 = Reader.create!({ name: "Carlos", email: "cl@twist.com", password: "23
 reader_3 = Reader.create!({ name: "Vicky", email: "viky@unknown.com", password: "3456", password_confirmation: "3456" })
 reader_4 = Reader.create!({ name: "Susie", email: "sus@sen.com", password: "4567", password_confirmation: "4567" })
 
+
 # reader_1 = Reader.create!({ name: "Agus", email: "ag@own.com" })
 # reader_2 = Reader.create!({ name: "Carlos", email: "cl@twist.com" })
 # reader_3 = Reader.create!({ name: "Vicky", email: "viky@unknown.com" })

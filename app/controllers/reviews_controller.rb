@@ -16,7 +16,8 @@ class ReviewsController < ApplicationController
     if params[:reader_id] && !Reader.exists?(params[:reader_id])
       redirect_to readers_path, alert: "Reader not found."
     else
-      @review = Review.new(reader_id: params[:reader_id])  
+      @review = Review.new(reader_id: params[:reader_id]) 
+      # byebug
     end
 
     # if params[:comic_id] && !Comic.exists?(params[:comic_id])
@@ -40,7 +41,7 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params) 
     # @review = current_user.reviews.build(review_params) -- this is also a way to instantiate a new review object that would be associated to the current user. it would replace lines 30 and 31.
 
-    # if params[:comic_id]
+    # if params[:reader_id]
     #   @review = Review.find_or_create_by(review_params)
     #   @review.save
     # end
@@ -51,7 +52,7 @@ class ReviewsController < ApplicationController
       # redirect_to review_path(@review)
       redirect_to @review
     else
-      byebug
+      # byebug
       # render :new
       render 'new'
     end

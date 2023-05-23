@@ -16,4 +16,10 @@ class Reader < ApplicationRecord
       self.comics << comic
     end
   end
+
+  def self.most_reviews
+    @most_revs = Reader.joins(:reviews).group('readers.id').having('co
+      unt(reviews.id) > 0').order('count(reviews.id) desc').limit(1)
+  end
+  
 end

@@ -10,10 +10,11 @@
   <%= f.collection_select :comic_title, Comic.all, :title, :title, prompt: true %>
   </p>
 
-    <p>
+  <p>
   <%= f.label :name %>
   <%= f.text_field :name %>
   </p>
+  
 
   <p>
   <%= f.label :description %>:<br>

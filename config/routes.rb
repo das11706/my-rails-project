@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get '/auth/github/callback' => 'sessions#create_git'
   # get '/auth/github' => 'sessions#create'
+  get '/mostreviews' => 'readers#most_reviews'
   
 end

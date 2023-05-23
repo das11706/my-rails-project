@@ -47,6 +47,12 @@ class ReadersController < ApplicationController
     end
   end
 
+    # returns the reader who has left the most reviews
+  def mostreviews
+    @reader = Review.most_reviews
+  end
+
+
   private
 
     def reader_params
@@ -59,4 +65,6 @@ class ReadersController < ApplicationController
         redirect_to login_path
       end
     end
+
+    
 end
